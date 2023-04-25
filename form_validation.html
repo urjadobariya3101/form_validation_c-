@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <style>
+        .commonp{
+            display: none;
+            font-size: 10px;
+            color: red;
+            text-transform: uppercase;
+        }
+    </style>
+    <!-- <form action=""> -->
+        <table>
+        <tr>
+            <td><label for="">Enter your name:- </label></td>
+            <td><input required type="text" id="namee" onfocus="rework()"/>
+            <span id="notice" class="commonp">Enter valid input [Only small characters]</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Enter your email:- </label></td>
+            <td><input required type="email" id="emaill" onfocus="rework()"/>
+            <span class="commonp" id="notice4">Enter valid email address</span>
+            </td>   
+        </tr>
+
+        <tr>
+            <td><label for="">Enter your password:- </label></td>
+            <td><input required type="text" id="passwordd" onfocus="rework()"/>
+            <span class="commonp" id="notice2">Password length should be between 8 to 16</span></td>
+        </tr>
+
+        <tr>
+            <td><label for="">Enter your phone number:- </label></td>
+            <td><input required type="text" id="numberr" onfocus="rework()"/>
+            <span class="commonp" id="notice3">Mobile number must be of length 10</span></td>
+        </tr>
+
+        <tr><td><button type="submit" onclick="check()">Click here for submit</button></td></tr>
+        </table>
+    <!-- </form> -->
+    <script type="text/javascript">
+        function nameecheck(){
+            let a = document.getElementById('namee').value;
+            if(a != "")
+            {
+                if(a > 'a' && a < 'z'){}
+                else{
+                document.getElementById('notice').style.display = "block";
+                }
+            }
+            else{
+                document.getElementById('notice').style.display = "block";
+            }
+        }
+        function emaillcheck(){
+            let b = document.getElementById('emaill').value;
+            if (b == "")
+            {
+                document.getElementById('notice4').style.display = "block";
+            }
+        }
+        function passworddcheck(){
+            let b = document.getElementById('passwordd').value;
+            let c = b.length;
+            if (c < 8 || c>16){
+                document.getElementById('notice2').style.display = "block";
+            }
+        }
+        function numberrcheck(){
+             let a = document.getElementById('numberr').value;
+            //  let b = typeof(a);
+             let c = a.length;
+             if( c == 0)
+             {
+                document.getElementById('notice3').style.display = "block";
+             }
+             else if(c>10)
+             {
+                document.getElementById('notice3').style.display = "block";
+
+             }
+        }
+        function rework(){
+            document.getElementById('notice').style.display = "none";
+            document.getElementById('notice2').style.display = "none";
+        }
+        function check(){
+            nameecheck();
+            emaillcheck();
+            passworddcheck();
+            numberrcheck();
+        }
+    </script>
+</body>
+</html>
